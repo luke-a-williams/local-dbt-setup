@@ -32,7 +32,13 @@ Password: the password for the user that you want to use to connect to the datab
 ```
 6. Click the Save button to create the server.
 
-TODO Figure out how to test this database with a postgresql query. Somehow need to connect to it locally and run something like:
+## Create and test a database in pgAdmin
+Lets get ourselves setup properly here, since the resources and guides so far don't cover this at all
+1. Within the pgAmin tool, right click on your new server and Create -> Database...
+2. Give it a name, lets call it `test-database` for now
+3. Click on the dropdown for Databases under your new server
+4. Right click on your new database, and click on `Query Tool`
+5. Run the following SQL there:
 ```
 CREATE TABLE test (id INT, name VARCHAR(255));
 INSERT INTO test VALUES (1, 'postgres');
@@ -40,6 +46,7 @@ INSERT INTO test VALUES (2, 'pg-admin');
 INSERT INTO test VALUES (3, 'docker');
 SELECT * FROM test;
 ```
+If it is working correctly, you should get a non-error response and a 3-row table.
 
 ## Retrieving and running DBT for docker
 Following the steps [here](https://docs.getdbt.com/docs/core/docker-install)
